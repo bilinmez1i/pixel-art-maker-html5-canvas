@@ -1,11 +1,11 @@
-# Pixel Art Maker Project
+# Pixel Art Maker Tutorial - Using HTML5 Canvas
 
 ## Table of Contents
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+* [Part 1: Setting up the Canvas](#part1)
+* [Part 2: ](#contributing)
 
-## Instructions
+## Part 1
 
 To get started, open `designs.js` and start building out the app's functionality.
 
