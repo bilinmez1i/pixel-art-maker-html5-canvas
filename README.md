@@ -12,4 +12,4 @@ In Part 1, we will be learning how to set up the canvas and learning how to draw
 
 ## Part 2
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+In Part 2, we will finish with drawing the grid and then learn how to draw the pixels on the canvas.
