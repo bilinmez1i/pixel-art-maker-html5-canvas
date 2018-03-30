@@ -4,7 +4,7 @@
 
 * [Part 1: Setting up the Canvas](#part-1)
 * [Part 2: Responding to User Events](#part-2)
-* [Part 3: Drawing the Grid and the Squares](#part3)
+* [Part 3: Drawing the Grid and the Squares](#part-3)
 
 ## Part 1
 ### Setting up the Canvas and Drawing the Grid
