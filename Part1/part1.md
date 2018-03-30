@@ -1,3 +1,5 @@
+[Home](../README.md)
+
 # Part 1
 
 ## Setting up Canvas and Drawing the Grid
@@ -103,5 +105,5 @@ From here, we can customize the grid by setting up variables and plugging them i
 
     let numRows = 20;
     let numCols = 20;
-    
+
 ```
