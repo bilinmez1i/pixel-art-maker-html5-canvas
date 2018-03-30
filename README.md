@@ -1,5 +1,7 @@
 # Pixel Art Maker Tutorial - Using HTML5 Canvas
 
+Hello and welcome to my  pixel art maker tutorial. This was my final project for the Grow with Google Scholarship Program. By the end of this tutorial, you will have made a pixel art maker that looks something like [this](https://arhillis.github.io/pixelArt.html). So, clone this repo and let's get started!
+
 ## Table of Contents
 
 * [Prerequisites](#prerequisites)
