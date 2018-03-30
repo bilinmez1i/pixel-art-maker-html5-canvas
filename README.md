@@ -18,7 +18,7 @@ Hello and welcome to my  pixel art maker tutorial. This was my final project for
 
 [Back to Top](#table-of-contents)
 
-## Part 1
+## [Part 1](Part1/part1.md)
 ### Setting up the Canvas and Drawing the Grid
 
 In Part 1, we will be learning how to set up the canvas and learning how to draw a square and a line in the canvas. We will also be learning how to change the line color (ctx.strokeStyle) and the fill color (ctx.fillStyle).
