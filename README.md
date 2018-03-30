@@ -7,8 +7,8 @@
 * [Part 2: Responding to User Events](#part-2)
 * [Part 3: Drawing the Grid and the Squares](#part-3)
 
-# Prerequisites
-## This tutorial assumes that you:
+## Prerequisites
+### This tutorial assumes that you:
 
 * Have a solid understanding of both Hypertext Markup Language (HTML) and Cascading Stylesheets (CSS)
 * Have a least an intermediate understanding of JavaScript (I should not have to explain what an object is or the basics of DOM manipulation, though for some of the more advanced stuff, I will be giving _brief_ explainations and providing links to documentation)
