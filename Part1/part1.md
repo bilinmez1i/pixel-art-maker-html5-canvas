@@ -1,4 +1,4 @@
-[Home](../README.md)
+[Home](../README.md) | [Part 2](../Part2/part2.md)
 
 # Part 1
 
@@ -152,11 +152,11 @@ From here, we can wrap all this code into a neat little function...
 
 ```
 
-Now, if you want to be able to change the color of the grid, all we have to do is add it as a third parameter.
+Now, if you want to be able to change the color of the grid, all we have to do is add it as a third parameter. One thing that you can do in JavaScript is add a second value to an assignment statement just in case the first one is undefined. There's another way to do this in ES6, but we're not going into that right now. Anyway, here's the final makeGrid function:
 
 ```javascript
     function makeGrid(numCols, numRows, color){
-        ctx.strokeStyle = color || "black"; //I added the last part just in
+        ctx.strokeStyle = color || "black"; //I added the last part just in case color is undefined
         let canvasWidth = canvas.width;
         let canvasHeight = canvas.height;
         let width = canvasWidth / numCols;
@@ -178,3 +178,7 @@ Now, if you want to be able to change the color of the grid, all we have to do i
 Right now, your canvas should look like this...
 
 ![canvas #2](canvas2.png)
+
+In Part 1, we learned how to get the canvas from the DOM and draw rectangles and lines on it. In Part 2, we will learn how to use the inputs to let the user change the canvas.
+
+[Home](../README.md) | [Part 2](../Part2/part2.md) | [Top](#part-1)
