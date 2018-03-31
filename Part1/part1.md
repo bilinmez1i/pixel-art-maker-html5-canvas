@@ -90,7 +90,7 @@ And your picture should look exactly the same. Once you can draw one line, you c
 It's a simple as using a couple of for loops. Since our canvas is 400x400, and 20 is the square root of 400, we'll use that for the dimensions of the grid. We can access the width and height of the cavas using canvas.height and canvas.width, respectively.
 
 ```javascript
-for(let i = 20; i < canvas.width; i+=20){
+for(let i = 20; i < canvas.width; i+= 20){
     drawLine(i, 0, i, canvas.height);
 }
 
@@ -107,3 +107,74 @@ From here, we can customize the grid by setting up variables and plugging them i
     let numCols = 20;
 
 ```
+
+In order to determine how wide and how tall each cell is going to be, we need to divide the nums of rows and columns by the width and height of the canvas. So we don't have to access the canvas every time a loop iterates, I am also going to store them in variables.
+
+```javascript
+
+    let canvasWidth = canvas.width;
+    let canvasHeight = canvas.height;
+    let width = canvasWidth / numCols;
+    let height = canvasHeight / numRow;
+
+```
+
+With these variables in place, it's not that hard to modify our loops to be both more versitile and efficient.
+
+```javascript
+    for(let i = width; i < canvasWidth; i+= width){
+        drawLine(i, 0, i, canvasHeight);
+    }
+
+    for(let i = height; i < canvasHeight; i+= height){
+        drawLine(0, i, canvasWidth, i);
+    }
+```
+
+
+From here, we can wrap all this code into a neat little function...
+
+```javascript
+    function makeGrid(numCols, numRows){
+        let canvasWidth = canvas.width;
+        let canvasHeight = canvas.height;
+        let width = canvasWidth / numCols;
+        let height = canvasHeight / numRow;
+
+        for(let i = width; i < canvasWidth; i+= width){
+            drawLine(i, 0, i, canvasHeight);
+        }
+
+        for(let i = height; i < canvasHeight; i+= height){
+            drawLine(0, i, canvasWidth, i);
+        }
+    }
+
+```
+
+Now, if you want to be able to change the color of the grid, all we have to do is add it as a third parameter.
+
+```javascript
+    function makeGrid(numCols, numRows, color){
+        ctx.strokeStyle = color || "black"; //I added the last part just in
+        let canvasWidth = canvas.width;
+        let canvasHeight = canvas.height;
+        let width = canvasWidth / numCols;
+        let height = canvasHeight / numRow;
+
+        for(let i = width; i < canvasWidth; i+= width){
+            drawLine(i, 0, i, canvasHeight);
+        }
+
+        for(let i = height; i < canvasHeight; i+= height){
+            drawLine(0, i, canvasWidth, i);
+        }
+    }
+
+    makeGrid(20, 20, "slateGray");
+
+```
+
+Right now, your canvas should look like this...
+
+![canvas #2](canvas2.png)
