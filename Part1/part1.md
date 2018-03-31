@@ -4,6 +4,7 @@
 
 ## Setting up Canvas and Drawing the Grid
 
+### Setting up the Canvas
 Before we can do any drawing, we have to set up the canvas. Inside designs.js, we're going to first grab the canvas and then set up the context of the canvas.
 
 The first line should be familiar to you:
@@ -19,6 +20,8 @@ const ctx = canvas.getContext("2d");
 ```
 
 It returns an object for the canvas complete with the properties and methods that you will need for drawing on the canvas. For more information, you can either go to [MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) OR [W3Schools](https://www.w3schools.com/tags/ref_canvas.asp).
+
+### Drawing a Rectangle
 
 So now that we have the canvas set up, we can start drawing on it. The first two thing I'm going to show you how to do is change the fill color and draw a rectangle.
 
@@ -37,6 +40,8 @@ ctx.fillRect(20, 20, 150, 100);
 ```
 
 The first number is the x-coordinate of the rectangle, the second is the y-coordinate, the third is the width, and the fourth is the height.
+
+### Drawing a Line
 
 Drawing a line is a little bit more complicated.
 
@@ -87,6 +92,8 @@ drawLine(15, 175, 250, 350);
 
 And your picture should look exactly the same. Once you can draw one line, you can draw many lines. And if you can draw many lines, you can draw a grid.
 
+### Making the Grid
+
 It's a simple as using a couple of for loops. Since our canvas is 400x400, and 20 is the square root of 400, we'll use that for the dimensions of the grid. We can access the width and height of the cavas using canvas.height and canvas.width, respectively.
 
 ```javascript
@@ -131,6 +138,7 @@ With these variables in place, it's not that hard to modify our loops to be both
     }
 ```
 
+### The makeGrid Function
 
 From here, we can wrap all this code into a neat little function...
 
