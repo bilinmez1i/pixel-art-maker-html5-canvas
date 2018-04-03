@@ -25,7 +25,7 @@ In Part 1, we will be learning how to set up the canvas and learning how to draw
 
 [Back to Top](#table-of-contents)
 
-## Part 2
+## [Part 2](Part2/part2.md)
 ### Responding to  User Events
 In part 4, we will learn how to redraw the grid every time the user clicks the submit button. We will also figure out how to find the coordinates of the mouse click when the user clicks on the canvas.
 
