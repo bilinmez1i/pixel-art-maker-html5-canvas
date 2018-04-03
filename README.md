@@ -8,6 +8,7 @@ Hello and welcome to my  pixel art maker tutorial. This was my final project for
 * [Part 1: Setting up the Canvas](#part-1)
 * [Part 2: Responding to User Events](#part-2)
 * [Part 3: Drawing the Grid and the Squares](#part-3)
+* [Licencing](#licencing)
 
 ## Prerequisites
 ### This tutorial assumes that you:
@@ -38,3 +39,13 @@ In Part 3, we will figure out how to draw the squares and set up a constructor f
 
 [Back to Top](#table-of-contents)
 
+## Licencing
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Pixel Art Maker HTML5 Canvas Tutorial</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/arhillis/pixel-art-maker-html5-canvas" property="cc:attributionName" rel="cc:attributionURL">Andrielle Hillis</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
+In other words:
+* If you create a derrivate work, you must credit me, as I have credited Udacity.
+* You may not use this tutorial for commercial purposes. 
+* If you do create your own pixel art maker, or your own tutorial, you must release it under the exact same licence.
+
+Further, if you are part of the Grow with Google Front-End Scholarship Program, you may not pass this Pixel Art Maker as your own. That would constitute plagurism, which is a violation of their [Code of Conduct](https://www.udacity.com/legal/community-guidelines).
