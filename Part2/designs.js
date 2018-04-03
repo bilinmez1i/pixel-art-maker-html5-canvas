@@ -50,10 +50,12 @@ submitBtn.onclick = function(event){
     let numRows = rowsInput.value;
     let numCols = colsInput.value;
 
+    /*
     console.log(typeof numRows);
     console.log(numRows + 1);
     console.log("Rows: " + numRows);
     console.log("Columns: " + numCols);
+    */
 
     makeGrid(numRows, numCols, "lightGray");
 };
