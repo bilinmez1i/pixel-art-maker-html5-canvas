@@ -1,15 +1,7 @@
 const canvas = document.getElementById("pixelCanvas");
 const ctx = canvas.getContext("2d");
 
-function drawLine(x1, y1, x2, y2) {
-    ctx.beginPath();
-    ctx.moveTo(x1, y1);
-    ctx.lineTo(x2, y2);
-    ctx.stroke();
-    ctx.restore();
-}
-
-// Select color input => 
+// Select color input => LATER
 
 // Select size input => 
 const rowsInput = document.getElementById("rows-input");
@@ -37,26 +29,29 @@ function makeGrid(numRows, numCols, color) {
         drawLine(0, i, canvasWidth, i);
     }
 
+    function drawLine(x1, y1, x2, y2) {
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+        ctx.restore();
+    }
+    
+
 }
 
-makeGrid(20, 20, "lightGray");
+function init(){
 
-// When size is submitted by the user, call makeGrid()
-submitBtn.onclick = function(event){
-    //alert("clicked!");
+    makeGrid(20, 20, "lightGray");
 
-    event.preventDefault();
+    // When size is submitted by the user, call makeGrid()
+    submitBtn.onclick = function(event){
+        event.preventDefault();
 
-    let numRows = rowsInput.value;
-    let numCols = colsInput.value;
+        let numRows = rowsInput.value;
+        let numCols = colsInput.value;
+        makeGrid(numRows, numCols, "lightGray");
+    };
+}
 
-    /*
-    console.log(typeof numRows);
-    console.log(numRows + 1);
-    console.log("Rows: " + numRows);
-    console.log("Columns: " + numCols);
-    */
-
-    makeGrid(numRows, numCols, "lightGray");
-};
-
+window.onload = init();
