@@ -141,10 +141,73 @@ So now, your _makeGrid_ function should look like this:
 
 }
 ```
+## A little Housekeeping
+
+Now that we have event listeners in play and have crossed the line from being a _website_ to a _web app_, I'd like clean up the code a little. The first thing we want to do is add an event listener to the window object that executes as soon as the page is done loading...
+
+```javascript
+    function init(){
+
+    }
+
+    window.onload = init();
+```
+
+Next, I want to move my first call to _makeGrid_ and my event listener function into _init_.
+
+```javascript
+function init(){
+
+    makeGrid(20, 20, "lightGray");
+
+    // When size is submitted by the user, call makeGrid()
+    submitBtn.onclick = function(event){
+        event.preventDefault();
+
+        let numRows = rowsInput.value;
+        let numCols = colsInput.value;
+        makeGrid(numRows, numCols, "lightGray");
+    };
+}
+```
+
+I also want to move the _drawLine_ function into _makeGrid_, since that's the only place where that function will get called.
+
+```javascript
+    function makeGrid(numRows, numCols, color) {
+        // Your code goes here!
+        ctx.fillStyle = "white";//To clear the canvas
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.strokeStyle = color || "black"; //I added the last part just in case color is undefined
+        let canvasWidth = canvas.width;
+        let canvasHeight = canvas.height;
+        let width = canvasWidth / numCols;
+        let height = canvasHeight / numRows;
+
+        for (let i = width; i < canvasWidth; i += width) {
+            drawLine(i, 0, i, canvasHeight);
+        }
+
+        for (let i = height; i < canvasHeight; i += height) {
+            drawLine(0, i, canvasWidth, i);
+        }
+
+        function drawLine(x1, y1, x2, y2) {
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+            ctx.restore();
+        }
+    }
+```
+
+The reason why you do this is you want your function or variable to be in the innermost scope that they ban being without having to write another function. If you have one function that's only going to get called inside of one other function, it's a really good idea to tuck the former into the latter. For more information about scope, I would recommend reading [_You Don't Know JavaScript: Scope and Closures_](https://github.com/getify/You-Dont-Know-JS/tree/master/scope%20%26%20closures) by Kyle Simson. He explains these concepts really well.
 
 ## In Conclusion
 
-First, in order to prevent the page from reloading when the user clicks a submit button, you must pass the event object as a parameter of the function and then call its _preventDefault_ method. Then, values of inputs are strings that need to be parsed into numbers before working with them. 
+First, in order to prevent the page from reloading when the user clicks a submit button, you must pass the event object as a parameter of the function and then call its _preventDefault_ method. Then, values of inputs are strings that need to be parsed into numbers before working with them. Finally, we learned a little bit about best practice when organizing code.
 
 In Part 3, we will be making the actual squares.
 
