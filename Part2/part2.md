@@ -147,3 +147,5 @@ So now, your _makeGrid_ function should look like this:
 First, in order to prevent the page from reloading when the user clicks a submit button, you must pass the event object as a parameter of the function and then call its _preventDefault_ method. Then, values of inputs are strings that need to be parsed into numbers before working with them. 
 
 In Part 3, we will be making the actual squares.
+
+[Home](../README.md) | [Part 1](../Part1/part1.md) | [Part 3](../Part3/part3.md)
