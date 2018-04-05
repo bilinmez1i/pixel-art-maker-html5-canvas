@@ -2,6 +2,7 @@
 
 Hello and welcome to my  pixel art maker tutorial. This was my final project for the Grow with Google Scholarship Program. By the end of this tutorial, you will have made a pixel art maker that looks something like [this](https://arhillis.github.io/pixelArt.html). So, clone this repo and let's get started!
 
+Oh, and if you like what you see, be sure to follow me on [twitter](https://twitter.com/arhillis)
 ## Table of Contents
 
 * [Prerequisites](#prerequisites)
@@ -22,7 +23,7 @@ Hello and welcome to my  pixel art maker tutorial. This was my final project for
 ## [Part 1](Part1/part1.md)
 ### Setting up the Canvas and Drawing the Grid
 
-In Part 1, we will be learning how to set up the canvas and learning how to draw a square and a line in the canvas. We will also be learning how to change the line color (ctx.strokeStyle) and the fill color (ctx.fillStyle).
+In Part 1, we will be learning how to set up the canvas and learning how to draw a square and a line in the canvas. We will also be learning how to change the line color (_ctx.strokeStyle_) and the fill color (_ctx.fillStyle_).
 
 [Back to Top](#table-of-contents)
 
@@ -32,10 +33,17 @@ In part 2, we will learn how to redraw the grid every time the user clicks the s
 
 [Back to Top](#table-of-contents)
 
-## Part 3
+## [Part 3](Part3/part3.md)
 ### Drawing the Squares and Setting up the Square Constructor
 
-In Part 3, we will figure out how to draw the squares and set up a constructor function for making the code more readable
+In Part 3, we will figure out how to draw the squares and even learn about teranry conditionals.
+
+[Back to Top](#table-of-contents)
+
+## Part 4
+### Responding to Mouse Events on the Canvas
+
+In Part 4, we will be adding event listeners to the canvas to draw sqaures where and when the user clicks on it. We will also be setting up the constructor function for the squares.
 
 [Back to Top](#table-of-contents)
 
