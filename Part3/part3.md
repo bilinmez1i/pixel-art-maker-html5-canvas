@@ -1,6 +1,6 @@
 [Home](../README.md) | [Part 2](../Part2/part2.md) | [Part 4](../Part4/part4.md)
 
-# Part 4
+# Part 3
 ## Making the Squares
 
 ## Accounting for the Grid Lines
@@ -111,14 +111,38 @@ Anyway, you can do the same thing with the vertical axis and the height of the s
 
 ```javascript
 let onHorizonalAxis = y === 0 || y === canvasHeight - height + 2;
-height -= (onHorizontalAxis) ? 1 : 2;
+squareHeight -= (onHorizontalAxis) ? 1 : 2;
 ```
 
 ### Why All the Bother?
 
-By now, you're probably asking why we didn't just set the width and height of the squares to be the numbers they were supposed to be to begin with. Well, there's a very good reason for that: when we make the _drawSquare_ function, 
+By now, you're probably asking why we didn't just set the width and height of the squares to be the numbers they were supposed to be to begin with. Well, there's a very good reason for that: when we make the _drawSquare_ function, we want to be able to just plug the input values into the function and do all the adjustments inside there.
+
 ## The _drawSquare_ Function
 
 Since we are going to be drawing a lot of squares, we're going to wrap all this code inside a function, just like we did with making the grid. The only parameters we really need are width, height, and color. We will be calculating everything else inside the function.
+
+Your function should look something like this...
+
+```javascript
+ function drawSquare(x, y, color){
+    ctx.fillStyle = color || "white";
+
+    let squareWidth = canvasWidth / numCols;
+    let squareHeight = canvasHeight / numRows; 
+    let onVerticalAxis = x === 0 || x === canvasWidth - width + 1;
+    let onHorizonalAxis = y === 0 || y === canvasHeight - height + 2;
+    squareWidth -= (onVerticalAxis) ? 1 : 2;
+    squareHeight -= (onHorizontalAxis) ? 1 : 2;
+
+    ctx.fillRect(x, y, squareWidth, squareHeight);
+ }
+```
+
+## Conclusion
+
+Because we have a grid drawn on the canvas, we have to adjust the width and height of our squares accordingly. Ternary conditionals make _if/else_ statements more efficient. We need to put the _drawSquare_ function inside the _init_ function so that it has access to _numRows_ and _numCols_.
+
+In Part 4, we will be learning how to make the canvas respond to user clicks.
 
 [Home](../README.md) | [Part 2](../Part2/part2.md) | [Part 4](../Part4/part4.md)
