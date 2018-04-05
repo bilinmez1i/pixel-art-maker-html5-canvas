@@ -78,10 +78,10 @@ function init(){
     
         let squareWidth = canvasWidth / numCols;
         let squareHeight = canvasHeight / numRows; 
-        let onVerticalAxis = x === 0 || x === canvasWidth - width + 1;
-        let onHorizonalAxis = y === 0 || y === canvasHeight - height + 2;
+        let onVerticalAxis = x === 0 || x === canvasWidth - squareWidth + 1;
+        let onHorizonalAxis = y === 0 || y === canvasHeight - squareHeight + 2;
         squareWidth -= (onVerticalAxis) ? 1 : 2;
-        squareHeight -= (onHorizontalAxis) ? 1 : 2;
+        squareHeight -= (onHorizonalAxis) ? 1 : 2;
     
         ctx.fillRect(x, y, squareWidth, squareHeight);
     }
