@@ -70,6 +70,9 @@ function init(){
     ctx.fillRect(161, 81, 78, 78);
     */
 
+    drawSquare(0, 0, "red");
+    drawSquare(161, 81, "red");
+
     function drawSquare(x, y, color){
         ctx.fillStyle = color || "white";
     
