@@ -8,6 +8,10 @@ const rowsInput = document.getElementById("rows-input");
 const colsInput = document.getElementById("cols-input");
 const submitBtn = document.getElementById("submit-btn");
 
+//Grab the dimensions of the canvas =>
+let canvasWidth = canvas.width;
+let canvasHeight = canvas.height;
+
 
 
 function makeGrid(numRows, numCols, color) {
@@ -16,8 +20,6 @@ function makeGrid(numRows, numCols, color) {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.strokeStyle = color || "black"; //I added the last part just in case color is undefined
-    let canvasWidth = canvas.width;
-    let canvasHeight = canvas.height;
     let width = canvasWidth / numCols;
     let height = canvasHeight / numRows;
 
@@ -42,16 +44,44 @@ function makeGrid(numRows, numCols, color) {
 
 function init(){
 
-    makeGrid(20, 20, "lightGray");
+    let numRows = 5;
+    let numCols = 5;
+
+    makeGrid(numRows, numCols, "black");
 
     // When size is submitted by the user, call makeGrid()
     submitBtn.onclick = function(event){
         event.preventDefault();
 
-        let numRows = rowsInput.value;
-        let numCols = colsInput.value;
-        makeGrid(numRows, numCols, "lightGray");
+        numRows = Number(rowsInput.value);
+        numCols = Number(colsInput.value);
+        makeGrid(numRows, numCols, "black");
     };
+
+    /*
+    let width = canvasWidth / numRows;
+    let height = canvasHeight / numCols;
+    let x = 0;
+    let y = 0;
+
+    ctx.fillStyle = "red";
+    drawSquare(0, 0, 79, 79);//400 divided by 5 is 80, minus 1 is 79
+
+    ctx.fillRect(161, 81, 78, 78);
+    */
+
+    function drawSquare(x, y, color){
+        ctx.fillStyle = color || "white";
+    
+        let squareWidth = canvasWidth / numCols;
+        let squareHeight = canvasHeight / numRows; 
+        let onVerticalAxis = x === 0 || x === canvasWidth - width + 1;
+        let onHorizonalAxis = y === 0 || y === canvasHeight - height + 2;
+        squareWidth -= (onVerticalAxis) ? 1 : 2;
+        squareHeight -= (onHorizontalAxis) ? 1 : 2;
+    
+        ctx.fillRect(x, y, squareWidth, squareHeight);
+    }
 }
 
 window.onload = init();
