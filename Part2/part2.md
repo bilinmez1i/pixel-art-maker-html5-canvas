@@ -153,7 +153,7 @@ Now that we have event listeners in play and have crossed the line from being a 
     window.onload = init();
 ```
 
-Next, I want to move my first call to _makeGrid_ and my event listener function into _init_.
+Next, I want to move my first call to _makeGrid_ and my event listener function into _init_. For more infirmation about _window.onload_, go to [MDN](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload).
 
 ```javascript
 function init(){
