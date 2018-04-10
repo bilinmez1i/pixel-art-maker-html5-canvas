@@ -7,6 +7,7 @@ const ctx = canvas.getContext("2d");
 const rowsInput = document.getElementById("rows-input");
 const colsInput = document.getElementById("cols-input");
 const submitBtn = document.getElementById("submit-btn");
+const colorInput = document.getElementById("color-input");
 
 //Grab the dimensions of the canvas =>
 let canvasWidth = canvas.width;
@@ -58,32 +59,37 @@ function init(){
         makeGrid(numRows, numCols, "black");
     };
 
-    /*
-    let width = canvasWidth / numRows;
-    let height = canvasHeight / numCols;
-    let x = 0;
-    let y = 0;
+    canvas.onclick = function(event){
+        event.preventDefault();
+        
+        let margin = this.getBoundingClientRect();
+        let x = event.clientX - margin.left;
+        let y = event.clientY - margin.top;
 
-    ctx.fillStyle = "red";
-    drawSquare(0, 0, 79, 79);//400 divided by 5 is 80, minus 1 is 79
-
-    ctx.fillRect(161, 81, 78, 78);
-    */
-
-    drawSquare(0, 0, "red");
-    drawSquare(161, 81, "red");
+        drawSquare(x, y, colorInput.value); //I'm tired of red
+    }
 
     function drawSquare(x, y, color){
-        ctx.fillStyle = color || "white";
+        ctx.fillStyle = color || "white";       
     
         let squareWidth = canvasWidth / numCols;
         let squareHeight = canvasHeight / numRows; 
+
+        x = findIndex(x, squareWidth);
+        y = findIndex(y, squareHeight); 
+
         let onVerticalAxis = x === 0 || x === canvasWidth - squareWidth + 1;
         let onHorizonalAxis = y === 0 || y === canvasHeight - squareHeight + 2;
+        
         squareWidth -= (onVerticalAxis) ? 1 : 2;
         squareHeight -= (onHorizonalAxis) ? 1 : 2;
     
         ctx.fillRect(x, y, squareWidth, squareHeight);
+
+        function findIndex(num, size) {
+            num = num - (num % size);
+            return (num === 0) ? num : num + 1; //If the index is zero, I want to add one so that doesn't go into the edge of the canvas
+        }
     }
 }
 

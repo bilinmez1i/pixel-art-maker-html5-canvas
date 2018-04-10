@@ -9,6 +9,7 @@ Oh, and if you like what you see, be sure to follow me on [twitter](https://twit
 * [Part 1: Setting up the Canvas](#part-1)
 * [Part 2: Responding to User Events](#part-2)
 * [Part 3: Drawing the Grid and the Squares](#part-3)
+* [Part 4: Event Listeners on the Cavas](#part-4)
 * [Licencing](#licencing)
 
 ## Prerequisites
@@ -40,7 +41,7 @@ In Part 3, we will figure out how to draw the squares and even learn about teran
 
 [Back to Top](#table-of-contents)
 
-## Part 4
+## [Part 4](Part4/part4.md)
 ### Responding to Mouse Events on the Canvas
 
 In Part 4, we will be adding event listeners to the canvas to draw sqaures where and when the user clicks on it. We will also be setting up the constructor function for the squares.
